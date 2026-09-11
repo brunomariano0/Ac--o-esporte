@@ -10,7 +10,8 @@ import palmeirasLogo from '../assets/palmeiras-logo-footylogos.svg'
 import santosLogo from '../assets/santos-fc-logo-footylogos.svg'
 import saopauloLogo from '../assets/sao-paulo-logo-footylogos.svg'
 import vitoriaLogo from '../assets/vitoria-logo-footylogos.svg'
-import vanImage from '../assets/van.png'
+import onibus from '../assets/Onibus.jpg'
+import van from '../assets/van.jpg'
 
 export type Service = {
   title: string
@@ -38,9 +39,9 @@ export const services: Service[] = [
 ]
 
 export const fleet: FleetItem[] = [
-  { name: 'Ônibus executivo', image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=900&q=85', description: 'Conforto e espaço para operações que exigem presença e organização.', tag: 'Conforto em movimento' },
-  { name: 'Van executiva', image: vanImage, description: 'Flexibilidade e praticidade para deslocamentos sob medida.', tag: 'Agilidade e precisão' },
-  { name: 'Solução sob medida', image: 'https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=900&q=85', description: 'Planejamento de transporte alinhado à necessidade da sua operação.', tag: 'Sua demanda, nosso plano' },
+  { name: 'Ônibus executivo', image: onibus, description: 'Conforto e espaço para operações que exigem presença e organização.', tag: 'Conforto em movimento' },
+  { name: 'Van executiva', image: van, description: 'Flexibilidade e praticidade para deslocamentos sob medida.', tag: 'Agilidade e precisão' },
+ 
 ]
 
 export const clubs: Club[] = [

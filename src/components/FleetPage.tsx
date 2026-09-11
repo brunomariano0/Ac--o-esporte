@@ -1,0 +1,139 @@
+import onibus from "../assets/Onibus.jpg";
+import van from "../assets/van.jpg";
+import "./FleetPage.css";
+
+import assentos from "../assets/assentos.jpeg";
+import dentro from "../assets/dentro-onibus.jpeg";
+import noite from "../assets/onibus-noite.jpeg";
+import onibus2 from "../assets/onibus-2.jpeg";
+
+
+import assentosVan from "../assets/Van-assentos.jpeg";
+import foraVan from "../assets/Van-fora.jpeg";
+
+type FleetVehicle = {
+  name: string;
+  type: string;
+  description: string;
+  photos: string[];
+  highlights: string[];
+  specs: { label: string; value: string }[];
+};
+
+const vehicles: FleetVehicle[] = [
+  {
+    name: "Ônibus executivo",
+    type: "Executivo premium",
+    description:
+      "Estrutura pensada para grupos, comissões técnicas e eventos que exigem conforto, organização e presença profissional em cada deslocamento.",
+    photos: [onibus, assentos, dentro, noite, onibus2],
+    highlights: ["Conforto premium", "Espaço para grupos", "Atendimento personalizado"],
+    specs: [
+      { label: "Capacidade", value: "Até 28 passageiros" },
+      { label: "Layout", value: "Poltronas altas e espaçadas" },
+      { label: "Uso ideal", value: "Clubes, eventos e excursões" },
+    ],
+  },
+  {
+    name: "Van executiva",
+    type: "Van premium",
+    description:
+      "Mobilidade, praticidade e conforto para deslocamentos esportivos, empresariais e de alto padrão, com atenção aos detalhes da operação.",
+    photos: [van, assentosVan,foraVan],
+    highlights: ["Movimento ágil", "Ambiente exclusivo", "Flexibilidade para operações"],
+    specs: [
+      { label: "Capacidade", value: "Até 15 passageiros" },
+      { label: "Layout", value: "Acabamento refinado e interno" },
+      { label: "Uso ideal", value: "Transfers e grupos menores" },
+    ],
+  },
+];
+
+type FleetPageProps = {
+  onBack: () => void;
+  onQuote: () => void;
+};
+
+export function FleetPage({ onBack, onQuote }: FleetPageProps) {
+  return (
+    <div className="fleet-page">
+      <header className="fleet-page-header">
+        <div className="section-kicker">Nossa frota</div>
+        <h1>
+          Transporte pensado
+          <br />
+          para cada operação.
+        </h1>
+        <p>
+          Veículos preparados para clubes, eventos, equipes e deslocamentos que
+          exigem segurança, conforto e organização em todos os detalhes.
+        </p>
+
+        <div className="fleet-page-actions">
+          <button className="button" onClick={onBack}>
+            Voltar ao início
+          </button>
+          <button className="button button-secondary" onClick={onQuote}>
+            Solicitar orçamento
+          </button>
+        </div>
+      </header>
+
+      <section className="fleet-page-stats" aria-label="Estatísticas da frota">
+        <div className="fleet-stat">
+          <strong>+15</strong>
+          <span>anos de experiência</span>
+        </div>
+        <div className="fleet-stat">
+          <strong>100%</strong>
+          <span>atendimento sob medida</span>
+        </div>
+        <div className="fleet-stat">
+          <strong>24/7</strong>
+          <span>suporte operacional</span>
+        </div>
+      </section>
+
+      <main className="fleet-page-main">
+        {vehicles.map((vehicle) => (
+          <article className="fleet-vehicle" key={vehicle.name}>
+            <div className="fleet-vehicle-main-image">
+              <img src={vehicle.photos[0]} alt={vehicle.name} />
+            </div>
+
+            <div className="fleet-vehicle-content">
+              <span className="fleet-type">{vehicle.type}</span>
+              <h2>{vehicle.name}</h2>
+              <p>{vehicle.description}</p>
+
+              <div className="fleet-specs">
+                {vehicle.specs.map((spec) => (
+                  <div key={spec.label} className="fleet-spec-item">
+                    <span>{spec.label}</span>
+                    <strong>{spec.value}</strong>
+                  </div>
+                ))}
+              </div>
+
+              <ul className="fleet-highlights">
+                {vehicle.highlights.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="fleet-gallery">
+              {vehicle.photos.map((photo, index) => (
+                <img
+                  key={`${vehicle.name}-${index}`}
+                  src={photo}
+                  alt={`${vehicle.name} - imagem ${index + 1}`}
+                />
+              ))}
+            </div>
+          </article>
+        ))}
+      </main>
+    </div>
+  );
+}
