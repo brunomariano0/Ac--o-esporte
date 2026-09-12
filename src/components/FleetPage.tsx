@@ -22,16 +22,17 @@ type FleetVehicle = {
 
 const vehicles: FleetVehicle[] = [
   {
-    name: "Ônibus executivo",
+    name: "Ônibus ",
     type: "Executivo premium",
     description:
       "Estrutura pensada para grupos, comissões técnicas e eventos que exigem conforto, organização e presença profissional em cada deslocamento.",
     photos: [onibus, assentos, dentro, noite, onibus2],
     highlights: ["Conforto premium", "Espaço para grupos", "Atendimento personalizado"],
     specs: [
-      { label: "Capacidade", value: "Até 28 passageiros" },
+      { label: "Capacidade", value: "Até 54 Lugares" },
       { label: "Layout", value: "Poltronas altas e espaçadas" },
       { label: "Uso ideal", value: "Clubes, eventos e excursões" },
+      { label: "Extras", value: "Banheiro, Ar condicionado, Wi-Fi, Água copo" },
     ],
   },
   {
@@ -42,9 +43,10 @@ const vehicles: FleetVehicle[] = [
     photos: [van, assentosVan,foraVan],
     highlights: ["Movimento ágil", "Ambiente exclusivo", "Flexibilidade para operações"],
     specs: [
-      { label: "Capacidade", value: "Até 15 passageiros" },
+      { label: "Capacidade", value: "Até 12, 15 e 18 Lugares" },
       { label: "Layout", value: "Acabamento refinado e interno" },
       { label: "Uso ideal", value: "Transfers e grupos menores" },
+      { label: "Extras", value: "Ar condicionado" },
     ],
   },
 ];

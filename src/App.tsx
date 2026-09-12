@@ -16,7 +16,7 @@ import { clubs, fleet, services } from "./data/siteData";
 import { FleetPage } from "./components/FleetPage";
 import "./App.css";
 
-const whatsappNumber = "5511999999999";
+const whatsappNumber = "5511915569038";
 const whatsappLink = `https://wa.me/${whatsappNumber}`;
 
 function App() {
@@ -64,10 +64,12 @@ function App() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const headerClass = showFleetPage || scrolled ? "header header-scrolled" : "header";
+
   if (showFleetPage) {
     return (
       <div className="site-shell">
-        <header className={scrolled ? "header header-scrolled" : "header"}>
+        <header className={headerClass}>
           <a className="brand" href="#inicio" onClick={(event) => {
             event.preventDefault();
             closeFleetPage();
@@ -205,7 +207,7 @@ function App() {
 
   return (
     <div className="site-shell">
-      <header className={scrolled ? "header header-scrolled" : "header"}>
+      <header className={headerClass}>
         <a className="brand" href="#inicio">
           <img className="brand-logo" src={logo} alt="Ação Esportes" />
           <span>
@@ -708,14 +710,14 @@ function App() {
 
         <div className="footer-column footer-contact">
           <h4>Contato</h4>
-          <a href="tel:+5511999999999">(11) 99942-9897</a>
+          <a href="tel:+5511915569038">(11) 91556-9038</a>
           <a href="mailto:contato@acaoesportes.com.br">
             acaoesportes@contato.com.br
           </a>
 
           <div className="footer-socials" aria-label="Redes sociais">
 
-            <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">
+            <a href="https://instagram.com/acaoesportes_oficial" target="_blank" rel="noreferrer" aria-label="Instagram">
               <FiInstagram size={18} />
             </a>
 
