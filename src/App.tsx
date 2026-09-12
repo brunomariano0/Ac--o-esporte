@@ -607,7 +607,7 @@ function App() {
               <a href="mailto:contato@acaoesportes.com.br">
                 <Zap size={18} /> contato@acaoesportes.com.br
               </a>
-              <a href="https://instagram.com" target="_blank">
+              <a href="https://instagram.com/acaoesportes_oficial" target="_blank">
                 <CirclePlay size={18} /> @acaoesportes
               </a>
             </div>
